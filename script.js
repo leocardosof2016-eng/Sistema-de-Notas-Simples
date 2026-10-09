@@ -17,7 +17,7 @@ function criarNota() {
     btnRemover.className = "btn-remover-nota";
     btnRemover.setAttribute("data-position", contador);
     btnRemover.innerHTML = "&times;";
-    btnRemover.setAttribute("onclick", "deletarNota()")
+    btnRemover.addEventListener("click", deletarNota);  //Adiciona um escutador de evento diretamente no elemento
 
     const areaTexto = document.createElement("textarea");
     areaTexto.className = "text-area";
@@ -27,27 +27,21 @@ function criarNota() {
     div.append(titulo, btnRemover, areaTexto);
 };
 
-/*
-function deletarNota() {
-    //const btnRemoverNota = document.querySelectorAll(".btn-remover-nota");
 
+function deletarNota() {
 
 	const index = this.getAttribute("data-position");
-	//const pegarDivID = document.getElementById("nota" + Number(index));
-	console.log("index: " + index);
-	console.log("contador: " + contador)
-	//divPai.removeChild(pegarDivID);     //Função para retirar a div selecionada da divPai
+	const divDeletada = document.getElementById("nota" + Number(index));
+	divPai.removeChild(divDeletada);                            //Função para retirar a div selecionada da divPai
 	
-	contador--
-        
-    
+    for(let i = Number(index) + 1; i <= contador; i++){
+        const divAtual = document.getElementById("nota" + i);
+        divAtual.id = "nota" + String(i-1);
+
+        let tituloAtual = divAtual.getElementsByTagName("span")[0]  //Pega o primeiro span contido na divAtual
+        tituloAtual.innerHTML = "Nota " + String(i-1);
+        divAtual.getElementsByTagName("button")[0].setAttribute("data-position", Number(i-1));  //Mesma coisa das duas linhas de cima, porém mais concatenado
+    };      
+
+    contador--
 };
-
-*/
-
-
-
-//A ser adicionado: Função do contador
-//1. pegar o id da respectiva div ao clicar no botão
-//2. remover essa div da árvore dom
-//3. reorganizar as outras div's, seus títulos e id's
