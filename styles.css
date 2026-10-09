@@ -23,31 +23,51 @@ body {
     margin: 20px;
     height: 200px;
     width: 200px;
-    background-color: aquamarine;
-    border: 2px, solid, black;
+    background-color: #363638d0;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px, solid, rgb(7, 7, 7);
+    box-shadow: rgba(0, 0, 0, 0.377) 10px 10px 8px;
+    
+
+    .btn-remover-nota {
+        margin-left: 20px;
+        margin-top: 5px;
+        margin-bottom: 4px;
+        width: 20px;
+        border-radius: 10px;
+    }
+
+    .text-area {
+        width: 90%;
+        height: 80%;
+        resize: none;
+        border: 2px, solid, rgb(7, 7, 7);
+    }
 }
 
 
 /*--- Configurações do botão inicial ---*/
 .button {
-  margin: auto;
-  margin-top: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 6px 12px;
-  gap: 4px;
-  height: 32px;
-  border: none;
-  background: #1b1b1cd0;
-  border-radius: 20px;
-  cursor: pointer;
+    margin: auto;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6px 12px;
+    gap: 4px;
+    height: 32px;
+    border: none;
+    background: #1b1b1cd0;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.377) 10px 10px 8px;
 }
 
 .lable {
-  line-height: 22px;
-  font-size: 17px;
-  color: #DE8A2A;
-  font-family: sans-serif;
-  letter-spacing: 1px;
+    line-height: 22px;
+    font-size: 17px;
+    color: #DE8A2A;
+    font-family: sans-serif;
+    letter-spacing: 1px;
 }
